@@ -1306,12 +1306,17 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
+    CGSize delta = CGSizeMake(scrollView.contentOffset.x - _lastContentOffset.x, scrollView.contentOffset.y - _lastContentOffset.y);
+    
     if (_loadingTileView)
     {
-        CGSize delta = CGSizeMake(scrollView.contentOffset.x - _lastContentOffset.x, scrollView.contentOffset.y - _lastContentOffset.y);
+
         CGPoint newOffset = CGPointMake(_loadingTileView.contentOffset.x + delta.width, _loadingTileView.contentOffset.y + delta.height);
         _loadingTileView.contentOffset = newOffset;
     }
+    
+    [self.delegate mapMove:delta];
+
 }
 
 - (void)scrollViewDidZoom:(UIScrollView *)scrollView
@@ -1327,6 +1332,8 @@
 
     if (_zoom < 3 && self.userTrackingMode == RMUserTrackingModeFollowWithHeading)
         self.userTrackingMode = RMUserTrackingModeFollow;
+    
+    [self.delegate mapZoom:_zoom];
 }
 
 // Detect dragging/zooming
