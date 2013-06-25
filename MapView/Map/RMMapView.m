@@ -1557,17 +1557,17 @@
 
         if (self.zoomingInPivotsAroundCenter)
         {
-            [self zoomInToNextNativeZoomAt:[self convertPoint:self.center fromView:self.superview] animated:YES];
+            [self zoomInToNextNativeZoomAt:[self convertPoint:self.center fromView:self.superview] animated:NO];
         }
         else if (self.userTrackingMode != RMUserTrackingModeNone && fabsf(aPoint.x - [self coordinateToPixel:self.userLocation.location.coordinate].x) < 75 && fabsf(aPoint.y - [self coordinateToPixel:self.userLocation.location.coordinate].y) < 75)
         {
-            [self zoomInToNextNativeZoomAt:[self coordinateToPixel:self.userLocation.location.coordinate] animated:YES];
+            [self zoomInToNextNativeZoomAt:[self coordinateToPixel:self.userLocation.location.coordinate] animated:NO];
         }
         else
         {
             [self registerMoveEventByUser:YES];
 
-            [self zoomInToNextNativeZoomAt:aPoint animated:YES];
+            [self zoomInToNextNativeZoomAt:aPoint animated:NO];
         }
     }
 
