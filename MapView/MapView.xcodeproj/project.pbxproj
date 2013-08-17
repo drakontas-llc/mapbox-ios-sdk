@@ -46,11 +46,11 @@
 		23A0AAEB0EB90AA6003A4521 /* RMFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = 23A0AAEA0EB90AA6003A4521 /* RMFoundation.h */; settings = {ATTRIBUTES = (); }; };
 		25757F4F1291C8640083D504 /* RMCircle.h in Headers */ = {isa = PBXBuildFile; fileRef = 25757F4D1291C8640083D504 /* RMCircle.h */; settings = {ATTRIBUTES = (); }; };
 		25757F501291C8640083D504 /* RMCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 25757F4E1291C8640083D504 /* RMCircle.m */; };
+		699C7FA417BBD59200848CBB /* libsqlcipher.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 699C7FA317BBD59200848CBB /* libsqlcipher.a */; };
 		96492C400FA8AD3400EBA6D2 /* RMGlobalConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 96492C3F0FA8AD3400EBA6D2 /* RMGlobalConstants.h */; settings = {ATTRIBUTES = (); }; };
 		B1EB26C610B5D8E6009F8658 /* RMNotifications.h in Headers */ = {isa = PBXBuildFile; fileRef = B1EB26C510B5D8E6009F8658 /* RMNotifications.h */; settings = {ATTRIBUTES = (); }; };
 		B8474BA40EB40094006A0BC1 /* RMDatabaseCache.h in Headers */ = {isa = PBXBuildFile; fileRef = B8474B980EB40094006A0BC1 /* RMDatabaseCache.h */; settings = {ATTRIBUTES = (); }; };
 		B8474BA50EB40094006A0BC1 /* RMDatabaseCache.m in Sources */ = {isa = PBXBuildFile; fileRef = B8474B990EB40094006A0BC1 /* RMDatabaseCache.m */; };
-		B8474BC10EB4019A006A0BC1 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B8474BC00EB4019A006A0BC1 /* libsqlite3.dylib */; };
 		B8800FF20EC3A239003E9CDD /* RMMapViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 12F2031E0EBB65E9003D7B6B /* RMMapViewDelegate.h */; settings = {ATTRIBUTES = (); }; };
 		B8800FF30EC3A23D003E9CDD /* RMConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 1266929F0EB75C0A00E002D5 /* RMConfiguration.h */; settings = {ATTRIBUTES = (); }; };
 		B8C974220E8A19B2007D16AD /* RMProjection.h in Headers */ = {isa = PBXBuildFile; fileRef = B83E64E30E80E73F001663B6 /* RMProjection.h */; settings = {ATTRIBUTES = (); }; };
@@ -210,6 +210,7 @@
 		25757F4E1291C8640083D504 /* RMCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMCircle.m; sourceTree = "<group>"; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		32CA4F630368D1EE00C91783 /* MapView_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapView_Prefix.pch; sourceTree = SOURCE_ROOT; };
+		699C7FA317BBD59200848CBB /* libsqlcipher.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libsqlcipher.a; path = ../sqlcipher/libsqlcipher.a; sourceTree = "<group>"; };
 		96492C3F0FA8AD3400EBA6D2 /* RMGlobalConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMGlobalConstants.h; sourceTree = "<group>"; };
 		B1EB26C510B5D8E6009F8658 /* RMNotifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMNotifications.h; sourceTree = "<group>"; };
 		B83E64B60E80E73F001663B6 /* RMPixel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMPixel.h; sourceTree = "<group>"; };
@@ -234,7 +235,6 @@
 		B83E65680E80E830001663B6 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B8474B980EB40094006A0BC1 /* RMDatabaseCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMDatabaseCache.h; sourceTree = "<group>"; };
 		B8474B990EB40094006A0BC1 /* RMDatabaseCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMDatabaseCache.m; sourceTree = "<group>"; };
-		B8474BC00EB4019A006A0BC1 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		B86F26AC0E87442C007A3773 /* RMMapLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMMapLayer.h; sourceTree = "<group>"; };
 		B8C974690E8A1A50007D16AD /* RMMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMMapView.h; sourceTree = "<group>"; };
 		B8C9746A0E8A1A50007D16AD /* RMMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMMapView.m; sourceTree = "<group>"; };
@@ -324,7 +324,7 @@
 				B8C974520E8A19B2007D16AD /* CoreLocation.framework in Frameworks */,
 				B8C974530E8A19B2007D16AD /* UIKit.framework in Frameworks */,
 				B8C974540E8A19B2007D16AD /* QuartzCore.framework in Frameworks */,
-				B8474BC10EB4019A006A0BC1 /* libsqlite3.dylib in Frameworks */,
+				699C7FA417BBD59200848CBB /* libsqlcipher.a in Frameworks */,
 				DD41961F16263E400049E6BA /* libGRMustache5-iOS.a in Frameworks */,
 				DD97C11616489678007C4652 /* libProj4.a in Frameworks */,
 			);
@@ -389,6 +389,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				699C7FA317BBD59200848CBB /* libsqlcipher.a */,
 				B8C9740D0E8A196E007D16AD /* Map */,
 				DD932BC2165C294100D69D49 /* Externals */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
@@ -406,7 +407,6 @@
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				B83E65680E80E830001663B6 /* QuartzCore.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
-				B8474BC00EB4019A006A0BC1 /* libsqlite3.dylib */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -924,6 +924,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/Map/GRMustache/lib\"",
 					"\"$(SRCROOT)/../Proj4\"",
+					"\"$(SRCROOT)/../sqlcipher\"",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = MapBox;
@@ -946,6 +947,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/Map/GRMustache/lib\"",
 					"\"$(SRCROOT)/../Proj4\"",
+					"\"$(SRCROOT)/../sqlcipher\"",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = MapBox;
@@ -978,6 +980,7 @@
 				OTHER_CFLAGS = (
 					"-O",
 					"-Wuninitialized",
+					"-DSQLITE_HAS_CODEC",
 				);
 				OTHER_LDFLAGS = "";
 				RUN_CLANG_STATIC_ANALYZER = NO;
@@ -1010,6 +1013,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DSQLITE_HAS_CODEC";
+				"OTHER_CFLAGS[arch=*]" = "";
 				OTHER_LDFLAGS = "";
 				RUN_CLANG_STATIC_ANALYZER = NO;
 				SDKROOT = iphoneos;
