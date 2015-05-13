@@ -168,7 +168,7 @@
 
 - (void)dealloc
 {
-    dispatch_release(_dataQueue);
+    //dispatch_release(_dataQueue);
 }
 
 #pragma mark 
