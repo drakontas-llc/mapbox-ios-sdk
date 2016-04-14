@@ -402,7 +402,7 @@
 
 - (void)didReceiveMemoryWarning
 {
-    RMLog(@"Low memory in the database tilecache");
+    //RMLog(@"Low memory in the database tilecache");
 
     [_writeQueueLock lock];
     [_writeQueue cancelAllOperations];

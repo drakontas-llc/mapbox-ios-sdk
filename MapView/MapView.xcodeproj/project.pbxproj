@@ -46,8 +46,10 @@
 		23A0AAEB0EB90AA6003A4521 /* RMFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = 23A0AAEA0EB90AA6003A4521 /* RMFoundation.h */; settings = {ATTRIBUTES = (); }; };
 		25757F4F1291C8640083D504 /* RMCircle.h in Headers */ = {isa = PBXBuildFile; fileRef = 25757F4D1291C8640083D504 /* RMCircle.h */; settings = {ATTRIBUTES = (); }; };
 		25757F501291C8640083D504 /* RMCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 25757F4E1291C8640083D504 /* RMCircle.m */; };
+		69386EAD1BDD5940003025F4 /* libGRMustache7-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 69386EAC1BDD5940003025F4 /* libGRMustache7-iOS.a */; };
 		699C7FA417BBD59200848CBB /* libsqlcipher.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 699C7FA317BBD59200848CBB /* libsqlcipher.a */; };
-		69FA08771ADB0E740084B6F3 /* libGRMustache7-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 69FA08761ADB0E740084B6F3 /* libGRMustache7-iOS.a */; };
+		69F1C0F91C2A3FFE0098DAEE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69F1C0F71C2A3FFE0098DAEE /* SystemConfiguration.framework */; };
+		69F1C0FA1C2A3FFE0098DAEE /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69F1C0F81C2A3FFE0098DAEE /* Fabric.framework */; };
 		96492C400FA8AD3400EBA6D2 /* RMGlobalConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 96492C3F0FA8AD3400EBA6D2 /* RMGlobalConstants.h */; settings = {ATTRIBUTES = (); }; };
 		B1EB26C610B5D8E6009F8658 /* RMNotifications.h in Headers */ = {isa = PBXBuildFile; fileRef = B1EB26C510B5D8E6009F8658 /* RMNotifications.h */; settings = {ATTRIBUTES = (); }; };
 		B8474BA40EB40094006A0BC1 /* RMDatabaseCache.h in Headers */ = {isa = PBXBuildFile; fileRef = B8474B980EB40094006A0BC1 /* RMDatabaseCache.h */; settings = {ATTRIBUTES = (); }; };
@@ -210,8 +212,10 @@
 		25757F4E1291C8640083D504 /* RMCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMCircle.m; sourceTree = "<group>"; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		32CA4F630368D1EE00C91783 /* MapView_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapView_Prefix.pch; sourceTree = SOURCE_ROOT; };
+		69386EAC1BDD5940003025F4 /* libGRMustache7-iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libGRMustache7-iOS.a"; path = "GRMustache/lib/libGRMustache7-iOS.a"; sourceTree = "<group>"; };
 		699C7FA317BBD59200848CBB /* libsqlcipher.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libsqlcipher.a; path = ../sqlcipher/libsqlcipher.a; sourceTree = "<group>"; };
-		69FA08761ADB0E740084B6F3 /* libGRMustache7-iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libGRMustache7-iOS.a"; path = "GRMustache/lib/libGRMustache7-iOS.a"; sourceTree = "<group>"; };
+		69F1C0F71C2A3FFE0098DAEE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		69F1C0F81C2A3FFE0098DAEE /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = "../../dforce-ios/Drakontas-LLC-DragonForce-iOS/Fabric.framework"; sourceTree = "<group>"; };
 		96492C3F0FA8AD3400EBA6D2 /* RMGlobalConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMGlobalConstants.h; sourceTree = "<group>"; };
 		B1EB26C510B5D8E6009F8658 /* RMNotifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMNotifications.h; sourceTree = "<group>"; };
 		B83E64B60E80E73F001663B6 /* RMPixel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMPixel.h; sourceTree = "<group>"; };
@@ -320,10 +324,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8C974500E8A19B2007D16AD /* CoreFoundation.framework in Frameworks */,
+				69F1C0FA1C2A3FFE0098DAEE /* Fabric.framework in Frameworks */,
+				69F1C0F91C2A3FFE0098DAEE /* SystemConfiguration.framework in Frameworks */,
 				B8C974510E8A19B2007D16AD /* CoreGraphics.framework in Frameworks */,
 				B8C974520E8A19B2007D16AD /* CoreLocation.framework in Frameworks */,
 				B8C974530E8A19B2007D16AD /* UIKit.framework in Frameworks */,
-				69FA08771ADB0E740084B6F3 /* libGRMustache7-iOS.a in Frameworks */,
+				69386EAD1BDD5940003025F4 /* libGRMustache7-iOS.a in Frameworks */,
 				B8C974540E8A19B2007D16AD /* QuartzCore.framework in Frameworks */,
 				699C7FA417BBD59200848CBB /* libsqlcipher.a in Frameworks */,
 				DD97C11616489678007C4652 /* libProj4.a in Frameworks */,
@@ -401,6 +407,8 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				69F1C0F71C2A3FFE0098DAEE /* SystemConfiguration.framework */,
+				69F1C0F81C2A3FFE0098DAEE /* Fabric.framework */,
 				B83E65590E80E7EB001663B6 /* CoreFoundation.framework */,
 				288765A40DF7441C002DB57D /* CoreGraphics.framework */,
 				B83E65630E80E81C001663B6 /* CoreLocation.framework */,
@@ -645,7 +653,7 @@
 		DDC4BEEE152E3DEC00089409 /* GRMustache */ = {
 			isa = PBXGroup;
 			children = (
-				69FA08761ADB0E740084B6F3 /* libGRMustache7-iOS.a */,
+				69386EAC1BDD5940003025F4 /* libGRMustache7-iOS.a */,
 				DD5A200A15CAD09400FE4157 /* GRMustache.h */,
 			);
 			name = GRMustache;
@@ -1063,6 +1071,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_BITCODE = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -1076,7 +1085,7 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = MapBox;
 				WRAPPER_EXTENSION = bundle;
 			};
@@ -1092,6 +1101,7 @@
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

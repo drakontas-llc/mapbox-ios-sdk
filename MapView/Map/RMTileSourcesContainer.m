@@ -255,7 +255,7 @@
 
     [_tileSourcesLock unlock];
 
-    RMLog(@"Added the tilesource '%@' to the container", [tileSource shortName]);
+    //RMLog(@"Added the tilesource '%@' to the container", [tileSource shortName]);
 
     return YES;
 }
