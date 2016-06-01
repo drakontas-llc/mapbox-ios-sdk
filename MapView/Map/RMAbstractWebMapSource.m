@@ -59,7 +59,7 @@
     return [NSArray arrayWithObjects:[self URLForTile:tile], nil];
 }
 
-- (UIImage *)imageForTile:(RMTile)tile inCache:(RMTileCache *)tileCache
+- (UIImage *)imageForTile:(RMTile)tile inCache:(RMTileCache *)tileCache withCacheKey:(NSString *)cacheKey
 {
     __block UIImage *image = nil;
 
@@ -72,7 +72,7 @@
 
     if (self.isCacheable)
     {
-        image = [tileCache cachedImage:tile withCacheKey:[self uniqueTilecacheKey]];
+        image = [tileCache cachedImage:tile withCacheKey:cacheKey];
 
         if (image)
             return image;
@@ -165,7 +165,7 @@
     }
 
     if (image && self.isCacheable)
-        [tileCache addImage:image forTile:tile withCacheKey:[self uniqueTilecacheKey]];
+        [tileCache addImage:image forTile:tile withCacheKey:cacheKey];
 
     dispatch_async(dispatch_get_main_queue(), ^(void)
     {

@@ -191,7 +191,7 @@
 
 #pragma mark RMTileSource methods
 
-- (UIImage *)imageForTile:(RMTile)tile inCache:(RMTileCache *)tileCache
+- (UIImage *)imageForTile:(RMTile)tile inCache:(RMTileCache *)tileCache withCacheKey:(NSString *)cacheKey
 {
     __block UIImage *image = nil;
 
@@ -199,7 +199,7 @@
 
     if (self.isCacheable)
     {
-        image = [tileCache cachedImage:tile withCacheKey:[self uniqueTilecacheKey]];
+        image = [tileCache cachedImage:tile withCacheKey:cacheKey];
 
         if (image)
             return image;
@@ -225,7 +225,7 @@
     }];
 
     if (image && self.isCacheable)
-        [tileCache addImage:image forTile:tile withCacheKey:[self uniqueTilecacheKey]];
+        [tileCache addImage:image forTile:tile withCacheKey:cacheKey];
 
 	return image;
 }

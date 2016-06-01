@@ -97,7 +97,10 @@
 *   @param tile The map tile in question.
 *   @param tileCache A tile cache to check first when providing the image.
 *   @return An image to display. */
-- (UIImage *)imageForTile:(RMTile)tile inCache:(RMTileCache *)tileCache;
+- (UIImage *)imageForTile:(RMTile)tile inCache:(RMTileCache *)tileCache withCacheKey:(NSString*) cacheKey;
+
+/** Provide an image if it exists in the cache but do not queue download */
+- (UIImage *)imageForTile:(RMTile)tile fromCache:(RMTileCache *)tileCache withCacheKey:(NSString*) cacheKey;
 
 /** Check if the tile source can provide the requested tile.
  *  @param tile The map tile in question.

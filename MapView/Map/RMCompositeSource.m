@@ -103,7 +103,7 @@
 	return @"n/a";
 }
 
-- (UIImage *)imageForTile:(RMTile)tile inCache:(RMTileCache *)tileCache
+- (UIImage *)imageForTile:(RMTile)tile inCache:(RMTileCache *)tileCache withCacheKey:(NSString *)cacheKey
 {
     UIImage *image = nil;
 
@@ -111,7 +111,7 @@
 
     if (self.isCacheable)
     {
-        image = [tileCache cachedImage:tile withCacheKey:[self uniqueTilecacheKey]];
+        image = [tileCache cachedImage:tile withCacheKey:cacheKey];
 
         if (image)
             return image;
@@ -134,7 +134,7 @@
         if (tile.zoom < tileSource.minZoom || tile.zoom > tileSource.maxZoom || ![tileSource tileSourceHasTile:tile])
             continue;
 
-        UIImage *tileImage = [tileSource imageForTile:tile inCache:tileCache];
+        UIImage *tileImage = [tileSource imageForTile:tile inCache:tileCache withCacheKey:[tileSource uniqueTilecacheKey]];
 
         if (tileImage)
         {
@@ -168,7 +168,7 @@
     }
 
     if (image && self.isCacheable)
-        [tileCache addImage:image forTile:tile withCacheKey:[self uniqueTilecacheKey]];
+        [tileCache addImage:image forTile:tile withCacheKey:cacheKey];
 
     dispatch_async(dispatch_get_main_queue(), ^(void)
     {

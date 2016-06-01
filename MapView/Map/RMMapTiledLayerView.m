@@ -76,7 +76,16 @@
     tiledLayer.levelsOfDetail = levelsOf2xMagnification;
     tiledLayer.levelsOfDetailBias = levelsOf2xMagnification;
 
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(tileRetrieved:) name:@"RMTileRetrieved" object:nil];
+    
+    
+    
     return self;
+}
+
+- (void)tileRetrieved:(NSNotification*)notification;
+{
+    [self setNeedsDisplay];
 }
 
 - (void)dealloc
@@ -119,10 +128,14 @@
             {
                 for (int y=y1; y<=y2; ++y)
                 {
-                    UIImage *tileImage = [_tileSource imageForTile:RMTileMake(x, y, zoom) inCache:[_mapView tileCache]];
+                    UIImage *tileImage = [_tileSource imageForTile:RMTileMake(x, y, zoom) inCache:[_mapView tileCache] withCacheKey:[_tileSource uniqueTilecacheKey]];
 
-                    if (IS_VALID_TILE_IMAGE(tileImage))
+                    if (IS_VALID_TILE_IMAGE(tileImage)) {
                         [tileImage drawInRect:CGRectMake(x * rectSize, y * rectSize, rectSize, rectSize)];
+                    }
+                    else {
+                        NSLog(@"invalid tile image");
+                    }
                 }
             }
 
@@ -159,7 +172,7 @@
             {
                 // for non-web tiles, query the source directly since trivial blocking
                 //
-                tileImage = [_tileSource imageForTile:RMTileMake(x, y, zoom) inCache:[_mapView tileCache]];
+                tileImage = [_tileSource imageForTile:RMTileMake(x, y, zoom) inCache:[_mapView tileCache] withCacheKey:[_tileSource uniqueTilecacheKey]];
             }
             else
             {
@@ -170,6 +183,16 @@
 
                 if ( ! tileImage)
                 {
+                    
+                    tileImage = [_tileSource imageForTile:RMTileMake(x, y, zoom) inCache:[_mapView tileCache] withCacheKey:[_tileSource uniqueTilecacheKey]];
+                 
+                    if (tileImage) {
+                         [self.layer setNeedsDisplayInRect:rect];
+                    }
+                    
+                }
+                
+                /*
                     // fire off an asynchronous retrieval
                     //
                     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void)
@@ -180,7 +203,7 @@
                         {
                             // this will return quicker if cached since above attempt, else block on fetch
                             //
-                            if (_tileSource.isCacheable && [_tileSource imageForTile:RMTileMake(x, y, zoom) inCache:[_mapView tileCache]])
+                            if (_tileSource.isCacheable && [_tileSource imageForTile:RMTileMake(x, y, zoom) inCache:[_mapView tileCache] withCacheKey:[_tileSource uniqueTilecacheKey]])
                             {
                                 dispatch_async(dispatch_get_main_queue(), ^(void)
                                 {
@@ -192,6 +215,8 @@
                         }
                     });
                 }
+                 */
+            
             }
         }
 
@@ -212,8 +237,8 @@
                           nextY = y / powf(2.0, (float)currentTileDepth);
                     float nextTileX = floor(nextX),
                           nextTileY = floor(nextY);
-
-                    tileImage = [_tileSource imageForTile:RMTileMake((int)nextTileX, (int)nextTileY, currentZoom) inCache:[_mapView tileCache]];
+                    
+                    tileImage = [_tileSource imageForTile:RMTileMake((int)nextTileX, (int)nextTileY, currentZoom) fromCache:[_mapView tileCache] withCacheKey:[_tileSource uniqueTilecacheKey]];
 
                     if (IS_VALID_TILE_IMAGE(tileImage))
                     {
@@ -295,10 +320,10 @@
 
             [tileImage drawInRect:rect];
         }
-        else
-        {
+        //else
+        //{
 //            NSLog(@"Invalid image for {%d,%d} @ %d", x, y, zoom);
-        }
+        //}
 
         UIGraphicsPopContext();
     }

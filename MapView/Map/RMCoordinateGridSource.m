@@ -109,7 +109,7 @@ static double coordinateGridSpacingDecimal[19] = {
     return self;
 }
 
-- (UIImage *)imageForTile:(RMTile)tile inCache:(RMTileCache *)tileCache
+- (UIImage *)imageForTile:(RMTile)tile inCache:(RMTileCache *)tileCache withCacheKey:(NSString *)cacheKey
 {
     if (tile.zoom < 0 || tile.zoom > 18)
         return nil;
@@ -117,7 +117,7 @@ static double coordinateGridSpacingDecimal[19] = {
     UIImage *image = nil;
 
 	tile = [[self mercatorToTileProjection] normaliseTile:tile];
-    image = [tileCache cachedImage:tile withCacheKey:[self uniqueTilecacheKey]];
+    image = [tileCache cachedImage:tile withCacheKey:cacheKey];
 
     if (image)
         return image;
@@ -309,7 +309,7 @@ static double coordinateGridSpacingDecimal[19] = {
     CGImageRelease(imageRef);
 
     if (image)
-        [tileCache addImage:image forTile:tile withCacheKey:[self uniqueTilecacheKey]];
+        [tileCache addImage:image forTile:tile withCacheKey:cacheKey];
 
 	return image;
 }

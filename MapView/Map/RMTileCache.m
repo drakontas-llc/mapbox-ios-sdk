@@ -422,7 +422,7 @@ static NSMutableDictionary *predicateValues = nil;
 
 - (id <RMTileCache>)memoryCacheWithConfig:(NSDictionary *)cfg
 {
-    NSUInteger capacity = 32;
+    NSUInteger capacity = 64;
 
 	NSNumber *capacityNumber = [cfg objectForKey:@"capacity"];
 	if (capacityNumber != nil)
@@ -459,9 +459,13 @@ static NSMutableDictionary *predicateValues = nil;
     BOOL useCacheDir = YES;
     RMCachePurgeStrategy strategy = RMCachePurgeStrategyFIFO;
 
-    NSUInteger capacity = 1000;
-    NSUInteger minimalPurge = capacity / 10;
+    //NSUInteger capacity = 1000;
+    //NSUInteger minimalPurge = capacity / 10;
 
+    NSUInteger capacity = 10000;
+    NSUInteger minimalPurge = 100;
+    
+    
     // Defaults
 
     NSNumber *capacityNumber = [cfg objectForKey:@"capacity"];
