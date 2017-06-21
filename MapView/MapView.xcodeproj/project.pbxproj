@@ -46,7 +46,7 @@
 		23A0AAEB0EB90AA6003A4521 /* RMFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = 23A0AAEA0EB90AA6003A4521 /* RMFoundation.h */; settings = {ATTRIBUTES = (); }; };
 		25757F4F1291C8640083D504 /* RMCircle.h in Headers */ = {isa = PBXBuildFile; fileRef = 25757F4D1291C8640083D504 /* RMCircle.h */; settings = {ATTRIBUTES = (); }; };
 		25757F501291C8640083D504 /* RMCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 25757F4E1291C8640083D504 /* RMCircle.m */; };
-		69386EAD1BDD5940003025F4 /* libGRMustache7-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 69386EAC1BDD5940003025F4 /* libGRMustache7-iOS.a */; };
+		6945CC131EEF10F7006EB1B9 /* libGRMustache7-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6945CC121EEF10F7006EB1B9 /* libGRMustache7-iOS.a */; };
 		699C7FA417BBD59200848CBB /* libsqlcipher.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 699C7FA317BBD59200848CBB /* libsqlcipher.a */; };
 		69F1C0F91C2A3FFE0098DAEE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69F1C0F71C2A3FFE0098DAEE /* SystemConfiguration.framework */; };
 		69F1C0FA1C2A3FFE0098DAEE /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69F1C0F81C2A3FFE0098DAEE /* Fabric.framework */; };
@@ -212,7 +212,7 @@
 		25757F4E1291C8640083D504 /* RMCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMCircle.m; sourceTree = "<group>"; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		32CA4F630368D1EE00C91783 /* MapView_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapView_Prefix.pch; sourceTree = SOURCE_ROOT; };
-		69386EAC1BDD5940003025F4 /* libGRMustache7-iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libGRMustache7-iOS.a"; path = "GRMustache/lib/libGRMustache7-iOS.a"; sourceTree = "<group>"; };
+		6945CC121EEF10F7006EB1B9 /* libGRMustache7-iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libGRMustache7-iOS.a"; path = "GRMustache/libGRMustache7-iOS.a"; sourceTree = "<group>"; };
 		699C7FA317BBD59200848CBB /* libsqlcipher.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libsqlcipher.a; path = ../sqlcipher/libsqlcipher.a; sourceTree = "<group>"; };
 		69F1C0F71C2A3FFE0098DAEE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		69F1C0F81C2A3FFE0098DAEE /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = "../../dforce-ios/Drakontas-LLC-DragonForce-iOS/Fabric.framework"; sourceTree = "<group>"; };
@@ -329,8 +329,8 @@
 				B8C974510E8A19B2007D16AD /* CoreGraphics.framework in Frameworks */,
 				B8C974520E8A19B2007D16AD /* CoreLocation.framework in Frameworks */,
 				B8C974530E8A19B2007D16AD /* UIKit.framework in Frameworks */,
-				69386EAD1BDD5940003025F4 /* libGRMustache7-iOS.a in Frameworks */,
 				B8C974540E8A19B2007D16AD /* QuartzCore.framework in Frameworks */,
+				6945CC131EEF10F7006EB1B9 /* libGRMustache7-iOS.a in Frameworks */,
 				699C7FA417BBD59200848CBB /* libsqlcipher.a in Frameworks */,
 				DD97C11616489678007C4652 /* libProj4.a in Frameworks */,
 			);
@@ -653,7 +653,7 @@
 		DDC4BEEE152E3DEC00089409 /* GRMustache */ = {
 			isa = PBXGroup;
 			children = (
-				69386EAC1BDD5940003025F4 /* libGRMustache7-iOS.a */,
+				6945CC121EEF10F7006EB1B9 /* libGRMustache7-iOS.a */,
 				DD5A200A15CAD09400FE4157 /* GRMustache.h */,
 			);
 			name = GRMustache;
@@ -921,6 +921,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -929,12 +930,14 @@
 				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
 				HEADER_SEARCH_PATHS = ../Proj4;
 				"HEADER_SEARCH_PATHS[arch=*]" = ../Proj4;
+				INFOPLIST_FILE = "MapView-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Map/GRMustache/lib\"",
 					"\"$(SRCROOT)/../Proj4\"",
 					"\"$(SRCROOT)/../sqlcipher\"",
 					"$(PROJECT_DIR)/Map/GRMustache/lib",
+					"$(PROJECT_DIR)/Map/GRMustache",
 				);
 				"LIBRARY_SEARCH_PATHS[arch=*]" = (
 					"$(inherited)",
@@ -954,6 +957,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -961,12 +965,14 @@
 				GCC_PREPROCESSOR_DEFINITIONS = "NS_BLOCK_ASSERTIONS=1";
 				HEADER_SEARCH_PATHS = ../Proj4;
 				"HEADER_SEARCH_PATHS[arch=*]" = ../Proj4;
+				INFOPLIST_FILE = "MapView-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Map/GRMustache/lib\"",
 					"\"$(SRCROOT)/../Proj4\"",
 					"\"$(SRCROOT)/../sqlcipher\"",
 					"$(PROJECT_DIR)/Map/GRMustache/lib",
+					"$(PROJECT_DIR)/Map/GRMustache",
 				);
 				"LIBRARY_SEARCH_PATHS[arch=*]" = (
 					"$(inherited)",
@@ -989,7 +995,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Don't Code Sign";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				DEPLOYMENT_POSTPROCESSING = NO;
 				GCC_C_LANGUAGE_STANDARD = c99;
@@ -1006,6 +1013,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "Map/MapView-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = (
@@ -1033,7 +1041,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = YES;
 				DEPLOYMENT_POSTPROCESSING = NO;
 				GCC_C_LANGUAGE_STANDARD = c99;
@@ -1049,6 +1058,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "Map/MapView-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DSQLITE_HAS_CODEC";
 				"OTHER_CFLAGS[arch=*]" = "";
